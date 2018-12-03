@@ -7,6 +7,65 @@ namespace LeetCodeSolutions
 {
     public static class Arrays
     {
+        public static void Rotate(int[,] matrix)
+        {
+            int n = matrix.GetLength(0);
+            for (int i = 0; i < matrix.Length / 2; i++)
+            {
+                for (int j = i; j < n - i - 1; j++)
+                {
+                    int temp = matrix[i,j];
+                    matrix[i,j] = matrix[n - j - 1,i];
+                    matrix[n - j - 1,i] = matrix[n - i - 1,n - j - 1];
+                    matrix[n - i - 1,n - j - 1] = matrix[j,n - i - 1];
+                    matrix[j,n - i - 1] = temp;
+                }
+            }
+        }
+
+        public static bool IsValidSudoku(char[,] board)
+        {
+            HashSet<string> seen = new HashSet<string>();
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    string number = board[i,j].ToString();
+                    int section1 = i / 3;
+                    int section2 = j / 3;
+                    if (number != ".")
+                        if (!seen.Add(number +"row"+ i) ||
+                            !seen.Add(number + "col"+j) ||
+                            !seen.Add(number + section1 + "-" + section2))
+                            return false;
+                }
+            }
+            return true;
+        }
+
+        public static int[] TwoSum(int[] nums, int target)
+        {
+            Dictionary<int, int> keys = new Dictionary<int, int>();
+            int[] result = new int[2];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int need = target - nums[i];
+                if (keys.ContainsKey(need))
+                {
+                    result[0] = keys[need];
+                    result[1] = i;
+                    break;
+                }
+                else
+                {
+                    if (!keys.ContainsKey(nums[i]))
+                    {
+                        keys.Add(nums[i], i);
+                    }
+                }
+            }
+            return result;
+        }
 
         public static void MoveZeroes(int[] nums)
         {

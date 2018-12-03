@@ -6,8 +6,42 @@ namespace LeetCodeSolutions
     {
         static void Main(string[] args)
         {
+            int result = Strings.FirstUniqChar("lotcdeleetcode");
             Console.ReadLine();
         }
+
+        #region Strings
+
+        //int result = Strings.Reverse(-123);
+        //var result = Strings.ReverseString("my test string");
+        #endregion
+
+        #region Arrays
+
+        //int[,] matrix = new int[3, 3]
+        //{
+        //    {1,2,3},
+        //    {4,5,6 },
+        //    {7,8,9 }
+        //};
+        //Arrays.Rotate(matrix);
+
+        //char[,] board = new char[9, 9] {
+        //    { '5', '3', '.', '.', '7', '.', '.', '.', '.'},
+        //    {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+        //    {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+        //    {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+        //    {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+        //    {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+        //    {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+        //    {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+        //    {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
+        //};
+
+        //var result = Arrays.IsValidSudoku(board);
+
+        //int[] nums = new int[] { 2, 7, 11, 15 };
+        //var result = Arrays.TwoSum(nums, 9);
 
         //int result = Arrays.RemoveDuplicates(new int[]{0,0,1,1,1,2,2,3,3,4});
 
@@ -37,5 +71,6 @@ namespace LeetCodeSolutions
 
         //int[] nums = new int[] { 0, 1, 0, 3, 12 };
         //Arrays.MoveZeroes(nums);
+        #endregion
     }
 }
