@@ -6,6 +6,62 @@ namespace LeetCodeSolutions
 {
     public static class Strings
     {
+        public static bool IsPalindrome(string s)
+        {
+            StringBuilder build=new StringBuilder();
+            
+            foreach (var myChar in s)
+            {
+                if (char.IsLetterOrDigit(myChar))
+                {
+                    build.Append(myChar.ToString().ToLower());
+                }
+            }
+
+            s = build.ToString();
+
+            for (int i = 0, j = s.Length - 1; i < j; i++, j--)
+            {
+                if (s[i] != s[j])
+                    return false;
+            }
+
+            return true;
+        }
+
+        public static bool IsAnagram(string s, string t)
+        {
+            Dictionary<char, int> chars=new Dictionary<char, int>();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (chars.ContainsKey(s[i]))
+                {
+                    chars[s[i]]++;
+                }
+                else
+                {
+                    chars.Add(s[i],1);
+                }
+            }
+
+            foreach (var c in t)
+            {
+                if (!chars.ContainsKey(c))
+                    return false;
+                if (chars[c] == 0)
+                    return false;
+                chars[c]--;
+            }
+
+            foreach (var pair in chars)
+            {
+                if (pair.Value != 0)
+                    return false;
+            }
+
+            return true;
+        }
+
         public static int FirstUniqChar(string s)
         {
             Dictionary<char, int[,]> chars = new Dictionary<char, int[,]>();

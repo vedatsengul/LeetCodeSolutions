@@ -6,12 +6,13 @@ namespace LeetCodeSolutions
     {
         static void Main(string[] args)
         {
-            int result = Strings.FirstUniqChar("lotcdeleetcode");
+            var result = Strings.IsPalindrome("A man, a plan, a canal: Panama");
+            
             Console.ReadLine();
         }
 
         #region Strings
-
+        //int result = Strings.FirstUniqChar("lotcdeleetcode");
         //int result = Strings.Reverse(-123);
         //var result = Strings.ReverseString("my test string");
         #endregion
