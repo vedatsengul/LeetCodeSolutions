@@ -6,7 +6,7 @@ namespace LeetCodeSolutions
     {
         static void Main(string[] args)
         {
-            var result = Strings.IsPalindrome("A man, a plan, a canal: Panama");
+            var result = Strings.IsPalindrome("A man, a plan, a canal: Panama");//test
             
             Console.ReadLine();
         }
